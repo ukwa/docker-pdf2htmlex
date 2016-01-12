@@ -1,0 +1,16 @@
+ROM debian:jessie
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends shellcheck \
+ && rm -rf /var/lib/apt/lists/* \
+
+# install nigit
+RUN wget --quiet -O /usr/bin/nigit https://github.com/lukasmartinelli/nigit/releases/download/v0.2/nigit_linux_amd64 \
+ && chmod +x /usr/bin/nigit
+
+# copy shell scripts
+COPY . /usr/src/app/
+WORKDIR /usr/src/app
+
+EXPOSE 8000
+CMD ["nigit", "--timeout", "5", "shellcheck.sh"]
