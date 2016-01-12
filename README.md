@@ -1,7 +1,7 @@
-pdftohtmlex
-===========
+pdf2htmlEX in Docker
+====================
 
-A python web service that runs pdftohtmlex on a URL.
+A python web service that runs [pdf2htmlEX][1] on a URL.
 
 Usage:
 
@@ -18,6 +18,7 @@ There are also optional parameters: ```first_page``` (defaults to 1) and ```last
 TODO
 ----
 
-* Suggest we switch to [nigit][1] and reduce the code we have to use.
+* Suggest we switch to [nigit][2] and reduce the code we have to use.
 
-[1]: https://github.com/lukasmartinelli/nigit
+[1]: http://coolwanglu.github.io/pdf2htmlEX/
+[2]: https://github.com/lukasmartinelli/nigit
