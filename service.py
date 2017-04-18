@@ -18,6 +18,8 @@ logging.getLogger().setLevel(logging.INFO)
 def hello_world():
     return 'Hello World!'
 
+# Note that the original from AIT did this: --embed-font 0 --process-outline 0 
+# The former was to reduce size, the latter to avoid showing the outline (which takes up a lot of space on screen)
 def run_pdftohtmlex(url, first_page="1", last_page = None):
     # Cache to temp file:
     in_f  = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
@@ -27,9 +29,9 @@ def run_pdftohtmlex(url, first_page="1", last_page = None):
     out_d, out_name = os.path.split(out_f.name)
     # run process
     if last_page:
-        cmd = ['pdf2htmlEX', '--first-page', first_page,'--last-page', last_page, '--dest-dir', "%s/" % out_d, in_f.name, out_name]
+        cmd = ['pdf2htmlEX', '--process-outline', '0', '--first-page', first_page,'--last-page', last_page, '--dest-dir', "%s/" % out_d, in_f.name, out_name]
     else:
-        cmd = ['pdf2htmlEX', '--dest-dir', "%s/" % out_d, in_f.name, out_name]
+        cmd = ['pdf2htmlEX', '--process-outline', '0', '--dest-dir', "%s/" % out_d, in_f.name, out_name]
     logging.debug("Running: %s" % cmd )
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
