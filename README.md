@@ -22,3 +22,9 @@ TODO
 
 [1]: http://coolwanglu.github.io/pdf2htmlEX/
 [2]: https://github.com/lukasmartinelli/nigit
+
+Change Log
+----------
+
+* *1.0.0:*
+    * Switch to gunicorn following instability in production.
