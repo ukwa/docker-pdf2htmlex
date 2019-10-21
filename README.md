@@ -1,7 +1,7 @@
 pdf2htmlEX in Docker
 ====================
 
-A python web service that runs [pdf2htmlEX][1] on a URL.
+A python web service that runs [pdf2htmlEX][1] on a URL, based on the `pdf2htmlEX` Debian package.
 
 Usage:
 
@@ -20,7 +20,7 @@ TODO
 
 * Suggest we switch to [nigit][2] and reduce the code we have to use.
 
-[1]: http://coolwanglu.github.io/pdf2htmlEX/
+[1]: https://github.com/pdf2htmlEX/pdf2htmlEX/
 [2]: https://github.com/lukasmartinelli/nigit
 
 Change Log
