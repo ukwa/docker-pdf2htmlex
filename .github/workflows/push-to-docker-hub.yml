@@ -1,0 +1,15 @@
+name: Build, scan and push to Docker Hub
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - '*'
+
+jobs:
+  run_docker_build_workflow:
+    uses: ukwa/ukwa-services/.github/workflows/push-to-docker-hub.yml@master
+    secrets:
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
